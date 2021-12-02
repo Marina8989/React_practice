@@ -1,0 +1,79 @@
+[
+  {
+    "category": "Flex",
+    "properties": [
+      {
+        "type": "flex-direction",
+        "link": "https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flex-direction",
+        "values": ["row", "row-reverse", "column", "column-reverse"]
+      },
+      {
+        "type": "flex-wrap",
+        "link": "https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flex-wrap",
+        "values": ["nowrap", "wrap", "wrap-reverse"]
+      },
+      {
+        "type": "flex-flow",
+        "link": "https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flex-flow",
+        "values": ["flex-direction", "flex-wrap"]
+      },
+      {
+        "type": "justify-content",
+        "link": "https://css-tricks.com/snippets/css/a-guide-to-flexbox/#justify-content",
+        "values": [
+          "flex-start",
+          "flex-end",
+          "center",
+          "space-between",
+          "space-around",
+          "space-evenly",
+          "start",
+          "end",
+          "left",
+          "right"
+        ]
+      },
+      {
+        "type": "align-items",
+        "link": "https://css-tricks.com/snippets/css/a-guide-to-flexbox/#align-items",
+        "values": [
+          "stretch",
+          "flex-start",
+          "flex-end",
+          "center",
+          "baseline",
+          "first baseline",
+          "last baseline",
+          "start",
+          "end",
+          "self-start",
+          "self-end"
+        ]
+      },
+      {
+        "type": "align-content",
+        "link": "https://css-tricks.com/snippets/css/a-guide-to-flexbox/#align-content",
+        "values": [
+          "flex-start",
+          "flex-end",
+          "center",
+          "space-between",
+          "space-around",
+          "space-evenly",
+          "stretch",
+          "start",
+          "end",
+          "baseline",
+          "first baseline",
+          "last baseline"
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Box Model"
+  },
+  {
+    "category": "Fonts"
+  }
+]
