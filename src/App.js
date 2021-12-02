@@ -91,13 +91,77 @@ const layoutSetup = [
         ]
     }
 ]
+const Container = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background: red;
+  display: flex;
+`
+const CSSVisualiserContainer = styled.div`
+  width: 70%;
+  background: pink;
+  padding: 20px;
+  box-sizing: border-box;
+`
+const ParseOutputContainer = styled.div`
+   width: 30%;
+   background: salmon;
+`
+const Indent = styled.div`
+  padding-left: ${(props) => props.indent && "20px"};
+`
+export default function App(){
+    const [layout, setLayout] = useState(layoutSetup);
 
-class App extends React.Component{
-    render(){
-        return(
-            <h3>test</h3>
-        )
+    const handleParentCSS = (entry, row) => {
+        const newlayout = layoutSetup.map((currentLayout) => {
+          if(currentLayout.id === row.id){
+             return {
+                 ...currentLayout,
+                 parentCSS: {
+                     ...row.parseCSS,
+                     ...entry
+                 }
+             };
+          }
+          return currentLayout;
+        })
+        setLayout(newlayout)
     }
-}
 
-export default App 
+    const objectToHTML = () => {
+        return layoutSetup.map((el) => {
+            return(
+                <div>
+                    {`<${el.elementType} class="${el.className}">`}
+                    {el.children.map((child) => (
+                        <Indent indent>
+                            {`<${child.elementType} class="${child.className}"></${child.elementType}>`}
+                        </Indent>
+                    ))}
+                    {`</${el.elementType}`}
+                </div>
+            )
+        })
+    }
+    console.log(objectToHTML)
+    return(
+        <Container>
+            <CSSVisualiserContainer>
+                <div>
+                    {layout.map((row) => (
+                        <Row handleParentCSS={handleParentCSS} row={row} />
+                    ))}
+                </div>
+                <div>
+                    <button>Add Row</button>
+                </div>
+            </CSSVisualiserContainer>
+            <ParseOutputContainer>
+                <div>{objectToHTML()}</div>
+                <div></div>
+            </ParseOutputContainer>
+        </Container>
+    )
+    
+}
