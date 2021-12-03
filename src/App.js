@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
+import Row from "./components/Row";
 
 const layoutSetup = [
     {
